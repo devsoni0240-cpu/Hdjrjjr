@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alvi Gour 💖</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #ff758c);
+            color: white;
+            overflow: hidden;
+        }
+
+        .page {
+            display: none;
+            height: 100vh;
+            width: 100%;
+        }
+
+        #page1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #page2 {
+            padding-top: 150px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 45px;
+        }
+
+        p {
+            font-size: 22px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #yesBtn {
+            background-color: white;
+            color: #ff4b5c;
+            position: absolute;
+            left: 40%;
+        }
+
+        #noBtn {
+            background-color: black;
+            color: white;
+            position: absolute;
+            left: 55%;
+        }
+
+        .message {
+            display: none;
+            margin-top: 200px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page" style="display:flex;">
+    <h1>Alvi Gour ❤️</h1>
+    <p>You are an amazing friend 🌸</p>
+    <p>Forever Friendship 🤝💖</p>
+    <button onclick="goToPage2()">Click for Surprise 💘</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+    <h1 id="question">Will You Be My Valentine? 💖</h1>
+
+    <button id="yesBtn" onclick="showMessage()">Yes 💕</button>
+    <button id="noBtn" onmouseover="moveNo()">No 😜</button>
+
+    <div class="message" id="finalMessage">
+        Lobhana I knew you would say yes ❤️🤓
+    </div>
+</div>
+
+<script>
+let yesSize = 20;
+
+function goToPage2() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+}
+
+function moveNo() {
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    noBtn.style.top = Math.random() * 300 + "px";
+    noBtn.style.left = Math.random() * 80 + "%";
+
+    yesSize += 5;
+    yesBtn.style.fontSize = yesSize + "px";
+    yesBtn.style.padding = (yesSize/2) + "px " + yesSize + "px";
+}
+
+function showMessage() {
+    document.getElementById("yesBtn").style.display = "none";
+    document.getElementById("noBtn").style.display = "none";
+    document.getElementById("question").style.display = "none";
+    document.getElementById("finalMessage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
